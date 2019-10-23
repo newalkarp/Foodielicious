@@ -1,1 +1,25 @@
-<app-italian-dish></app-italian-dish>
+<div class="row">
+    <div class="col-xs-12">
+        <button class="btn btn-success">New Recipe</button>
+    </div>
+</div>
+<hr>
+<div class="row">
+    <div class="col-xs-12">
+        <a href="#" 
+        class="list-group-item clearfix" 
+        *ngFor="let irecipe of italianRecipes">
+            <div class="pull-left">
+                <h4 class="list-group-item-heading">{{ irecipe.name }}</h4>
+                <p class="list-group-item-text">{{ irecipe.directions }}</p>
+            </div>
+            <span class="pull-right">
+                <img [src]="irecipe.imagePath" 
+                alt="{{ irecipe.name }}" 
+                class="img-responsive" 
+                style="max-height: 50px;">
+            </span>
+        </a>
+        <app-italian-dish></app-italian-dish>
+    </div>
+</div>
